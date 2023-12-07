@@ -1,0 +1,404 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'poppins', sans-serif;
+    overflow-x: hidden;
+}
+html {
+    scroll-behavior: smooth;
+}
+.header {
+    min-height: 100vh;
+    width: 100%;
+    background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(/Pictures/library.jpg);
+    background-size: cover;
+    background-position: center;
+}
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 7%;
+}
+nav .logo {
+    display: flex;
+    align-items: center;
+}
+nav .logo img {
+    width: 50px;
+    border-radius: 50%;
+}
+nav .logo a {
+    color: white;
+    font-weight: 600;
+    text-decoration: none;
+    padding: 0 5px;
+    font-size: 25px;
+}
+.nav-links li {
+    list-style: none;
+    display: inline-block;
+    margin: 10px 15px;
+}
+.nav-links li a{
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+}
+.signin-btn {
+    background: #fff;
+    color: #000;
+    padding: 8px 20px;
+    border-radius: 20px;
+    text-decoration: none;
+    font-size: 14px;
+}
+.container {
+    padding: 0 7%;
+}
+.header h1 {
+    font-size: 4vw;
+    font-weight: 500;
+    color: white;
+    text-align: center;
+    padding-top: 18%;
+}
+/* -----------------------------------------END OF NAV ------------------------------------- */
+
+.slide-container {
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 1200px;
+    height: 600px;
+    padding: 50px;
+    background-color: #f5f5f5;
+    box-shadow: 0 30px 50px #dbdbdb;
+}
+#slide {
+    width: max-content;
+    margin-top: 50px;
+}
+.slide-container #slide .item {
+    width: 200px;
+    height: 300px;
+    background-position: 50% 50%;
+    display: inline-block;
+    transition: 0.5s;
+    background-size: cover;
+    position: absolute;
+    z-index: 1;
+    top: 50%;
+    transform: translate(0, -50%);
+    border-radius: 20px;
+    box-shadow: 0 30px 50px #505050;
+}
+.slide-container #slide .item:nth-child(1)
+{
+    left: 0;
+    top: 0;
+    transform: translate(0, 0);
+    border-radius: 0;
+    width: 100%;
+    height: 100%;
+    box-sizing: none;
+}
+.slide-container #slide .item:nth-child(2) {
+    left: 50%;
+}
+.slide-container #slide .item:nth-child(3) {
+    left: calc(50% + 220px);
+}
+.slide-container #slide .item:nth-child(4) {
+    left: calc(50% + 440px);
+}
+.slide-container #slide .item:nth-child(n+5) {
+    left: calc(50% + 660px);
+}
+.item .slide-content {
+    overflow-y: hidden;
+    position: absolute;
+    top: 50%;
+    left: 10%;
+    width: 300px;
+    text-align: left;
+    padding: 0;
+    color: #eee;
+    transform: translate(0, -50%);
+    display: none;
+}
+.item:nth-child(1) .slide-content {
+    display: block;
+    z-index: 11111;
+}
+.item .name {
+    font-size: 40px;
+    font-weight: 500;
+    opacity: 0;
+    animation: showcontent 1s ease-in-out 1 forwards;
+}
+.item .des {
+    margin: 20px 0;
+    opacity: 0;
+    animation: showcontent 1s ease-in-out 0.3s 1 forwards;
+}
+.item button {
+    padding: 10px 20px;
+    border: none;
+    opacity: 0;
+    cursor: pointer;
+    animation: showcontent 1s ease-in-out 0.6s 1 forwards;
+}
+@keyframes showcontent {
+    from{
+        opacity: 0;
+        transform: translate(0, 100px);
+        filter: blur(33px);
+    } to {
+        opacity: 1;
+        transform: translate(0, 0);
+        filter: blur(0);
+    }
+}
+.buttons {
+    position: absolute;
+    bottom: 30px;
+    z-index: 222222;
+    text-align: center;
+    width: 100%;
+}
+.buttons button {
+    width: 50px;
+    height: 50px;
+    border-radius: 50px;
+    border: 1px solid #555;
+    transition: 0.5s;
+    cursor: pointer;
+}
+.buttons button:hover {
+    background: #10100c;
+}
+/* ----------------------------------------- END OF SCHOOL AREAS ------------------------------------- */
+.sub-title {
+    margin: 50px 0 20px;
+    font-size: 2.2vw;
+    font-weight: 500;
+    color: #333;
+}
+.areas {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-gap: 30px;
+}
+.areas div img{
+    width: 200px;
+    height: 120px;
+    border-radius: 10px;
+}
+.areas div {
+    position: relative;
+}
+.areas div span{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: #fff;
+}
+/* ----------------------------------------- END OF AREAS ------------------------------------- */
+.featured-books {
+    width: 100%;
+    height: 100vh;
+    padding: 70px 0;
+}
+.featured-books h1 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 30px;
+    font-size: 45px;
+}
+.featured-books .featured-books-box {
+    width: 95%;
+    height: 65vh;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    overflow: hidden;
+    overflow-x: scroll;
+}
+.featured-books .featured-books-box .featured-books-card {
+    width: 250px;
+    height: 400px;
+    text-align: center;
+    padding: 5px;
+    border: 1px solid #919191;
+    margin: auto 20px;
+}
+.featured-books .featured-books-box .featured-books-card:hover {
+    box-shadow: 0 0 5px #089da1;
+}
+.featured-books .featured-books-box .featured-books-card .featured-books-img img{
+    width: 150px;
+}
+.featured-books .featured-books-box .featured-books-card .featured-books-tag {
+    height: 180px;
+    overflow: hidden;
+}
+.featured-books .featured-books-box .featured-books-card .featured-books-tag .author {
+    color: #919191;
+}
+.featured-books .featured-books-box .featured-books-card .featured-books-tag .categories {
+    color: #089da1;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+.featured-books .featured-books-box .featured-books-card .featured-books-tag .f_btn {
+    padding: 8px 20px;
+    border: 2px solid #089da1;
+    text-decoration: none;
+    color: black; 
+}
+/* ----------------------------------------- END OF BOOKS ------------------------------------- */
+
+
+.console-games {
+    width: 100%;
+    height: 100vh;
+    padding: 70px 0;
+}
+.console-games h1 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 30px;
+    font-size: 45px;
+}
+
+.console-games .console-games-box {
+    width: 95%;
+    height: 65vh;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    overflow: hidden;
+    overflow-x: scroll;
+}
+
+.console-games .console-games-box .console-games-card .console-games-tag {
+    height: 180px;
+    overflow: hidden;
+}
+
+
+.console-games .console-games-box .console-games-card {
+    width: 250px;
+    height: 400px;
+    text-align: center;
+    padding: 5px;
+    border: 1px solid #919191;
+    margin: auto 20px;
+}
+.console-games .console-games-box .console-games-card:hover {
+    box-shadow: 0 0 5px #089da1;
+}
+
+.console-games .console-games-box .console-games-card .console-games-img img {
+    width: 150px;
+}
+.console-games .console-games-box .console-games-card .console-games-tag h2 {
+    margin: 12px;
+}
+
+.console-games .console-games-box .console-games-card .console-games-tag .creator {
+    color: #919191;
+}
+
+.console-games .console-games-box .console-games-card .console-games-tag .categories {
+    color: #089da1;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+.console-games .console-games-box .console-games-card .console-games-tag .f_btn {
+    padding: 8px 20px;
+    border: 2px solid #089da1;
+    text-decoration: none;
+    color: black; 
+}   
+
+.console-games::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 8px rgba(0, 0, 0, 0.2);
+}
+.console-games::-webkit-scrollbar-thumb {
+    background: #089da1;
+    border-radius: 10px;
+}
+/* -----------------------------------------END OF CONSOLE GAMES------------------------------------- */
+
+.cta {
+    margin: 80px 0;
+    background-image: linear-gradient(to right, #3f2321, transparent), url(Entrance.jpg);
+    background-size: cover;
+    background-position: center;
+    border-radius: 10px;
+    padding: 5%;
+    color: #fff;
+}
+.cta h3 {
+    font-size: 4vw;
+    line-height: 5.3vw;
+    font-weight: 500;
+}
+.cta p {
+    font-size: 18px;
+    margin: 10px 0;
+}
+.cta-btn {
+    background: #ff5361;
+    color: #fff;
+    text-decoration: none;
+    padding: 12px 30px;
+    border-radius: 8px;
+    margin-top: 20px;
+    display: inline-block;
+}
+/* -----------------------------------------END OF CTA------------------------------------- */
+
+.about-msg {
+    text-align: center;
+    margin: 80px 0;
+    color: #333;
+    font-size: 17px;
+}
+.about-msg h2 {
+    font-size: 28px;
+    margin-bottom: 30px;
+    font-weight: 500;
+}
+
+/* -----------------------------------------END OF ABOUT US------------------------------------- */
+
+.footer {
+    margin: 80px 0 10px;
+    text-align: center;
+}
+.footer a {
+    text-decoration: none;
+    color: #999;
+    font-size: 22px;
+    margin: 0 5px;
+}
+.footer hr {
+    background: #999;
+    height: 1px;
+    width: 100%;
+    border: 0;
+    margin: 20px 0;
+}
+.footer p {
+    padding-bottom: 15px;
+}
+
+/* -----------------------------------------END OF FOOTER------------------------------------- */
