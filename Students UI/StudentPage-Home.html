@@ -3,105 +3,75 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Student Page Home</title>
+    <title>Home</title>
     <link rel="stylesheet" href="StudentPage-Home.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
 <body>
    <div class="container">
-        <header>
-        <div class="logo">
-            Welcome!
-        </div>
+        <header class="header">
+            <div class="header-1">
+                <div class="logo-details">
+                <img src="/Pictures/STI-Small.png" class="logo">
+                <p>STI College Muñoz-EDSA Library</p>
+                </div>
 
-        <ul class="navbar">
-            <li><a href="#">Home</a></li>
-            <li><a href="#">Books</a></li>
-            <li><a href="#">Board Games</a></li>
-            <li><a href="#">Console Games</a></li>
-            <li><a href="#">PC</a></li>
-        </ul>
+                <div class="icons">
+                    <i class='bx bx-bell'></i>
+                    <i class='bx bx-book'></i>
+                    <a href="StudentProfile.html"><img src="https://upload.wikimedia.org/wikipedia/en/1/14/Balltze_%28Cheems%29.jpg" class="profile"></a>
+                </div>
+            </div>
 
-        <div class="icons">
-            <a href="#"><span class="material-symbols-outlined">notifications</span></a>
-            <a href="#"><span class="material-symbols-outlined">book_2</span></a>
-            <a href="#"><img src="https://cdn.i-scmp.com/sites/default/files/styles/768x768/public/d8/images/canvas/2023/08/21/c080045a-e333-40c5-aee8-17c42ce9b47e_65e19817.jpg?itok=KNdRuSea&v=1692611441"></a>
-        </div>
+            <div class="header-2">
+                <div class="navbar">
+                    <a href="StudentPage-Home.html">Home</a>
+                    <a href="StudentPage-Book.html">Book</a>
+                    <a href="#">Board Games</a>
+                    <a href="#">PS4</a>
+                    <a href="#">PC</a>
+                </div>
+            </div>
 
         </header>
 
-        <div class="middle-container">
-            <div class="rules-container">
-                <h1>Rules & Regulations</h1>
-                <p>1. Avoid Spamming <br> 2. Please go to the librarian counter after borrowing <br> </p>
-            </div>
-            <div class="recommendation-container">
-                <h1>Recommendation</h1>
-                <div class="book-card">
-                    <div class="featured-books-box">
+        <!------------------------------- END OF HEADER ------------------------->
 
-                        <div class="featured-books-card">
-        
-                            <div class="featured-books-img">
-                                <img src="https://cartoonresearch.com/wp-content/uploads/2017/05/tj1.jpg">
-                            </div>
-                            
-                            <div class="featured-books-tag">
-                                <h2>Tom and Jerry</h2>
-                                <p class="author">William Hanna and Joseph Barbera</p>
-                                <div class="categories">Kid-Friendly, Action, Comedy</div>
-                                <a href="#" class="f_btn">Add</a>
-                            </div>
-                        </div>
+        <div class="bottom-navbar">
+            <a href="StudentPage-Home.html"><i class='bx bxs-home'>Home</i></a>
+                <a href="StudentPage-Book.html"><i class='bx bxs-book-alt'>Book</i></a>
+                <a href="#"><i class='bx bxs-cube-alt' >Board Games</i></a>
+                <a href="#"><i class='bx bxs-joystick'>PS4</i></a>
+                <a href="#"><i class='bx bx-desktop'>PC</i></a>
+        </div>
 
-                        <div class="featured-books-card">
-        
-                            <div class="featured-books-img">
-                                <img src="https://cartoonresearch.com/wp-content/uploads/2017/05/tj1.jpg">
-                            </div>
-                            
-                            <div class="featured-books-tag">
-                                <h2>Tom and Jerry</h2>
-                                <p class="author">William Hanna and Joseph Barbera</p>
-                                <div class="categories">Kid-Friendly, Action, Comedy</div>
-                                <a href="#" class="f_btn">Add</a>
-                            </div>
-                        </div>
+        <!------------------------------- END OF BOTTOM NAVBAR ------------------------->
 
-                        <div class="featured-books-card">
-        
-                            <div class="featured-books-img">
-                                <img src="https://cartoonresearch.com/wp-content/uploads/2017/05/tj1.jpg">
-                            </div>
-                            
-                            <div class="featured-books-tag">
-                                <h2>Tom and Jerry</h2>
-                                <p class="author">William Hanna and Joseph Barbera</p>
-                                <div class="categories">Kid-Friendly, Action, Comedy</div>
-                                <a href="#" class="f_btn">Add</a>
-                            </div>
-                        </div>
-                        <div class="featured-books-card">
-        
-                            <div class="featured-books-img">
-                                <img src="https://cartoonresearch.com/wp-content/uploads/2017/05/tj1.jpg">
-                            </div>
-                            
-                            <div class="featured-books-tag">
-                                <h2>Tom and Jerry</h2>
-                                <p class="author">William Hanna and Joseph Barbera</p>
-                                <div class="categories">Kid-Friendly, Action, Comedy</div>
-                                <a href="#" class="f_btn">Add</a>
-                            </div>
-                        </div>
+        <section class="home" id="home">
+
+            <div class="row">
+                <div class="content">
+                    <h3>Books Available</h3>
+                    <p>Pick your book in the selection of available. Romance, Comedy, Thriller, Thesis, Psychology and much more!</p>
+                    <a href="" class="btn">BORROW NOW</a>
+                </div>
+
+                <div class="swiper books-list">
+
+                    <div class="swiper-wrapper">
+                        <a href="#" class="swiper-slide"><img src="/Pictures/Book1.png" alt=""></a>
+                        <a href="#" class="swiper-slide"><img src="/Pictures/Book2.png" alt=""></a>
+                        <a href="#" class="swiper-slide"><img src="/Pictures/Book3.png" alt=""></a>
+                        <a href="#" class="swiper-slide"><img src="/Pictures/Book4.png" alt=""></a>
+                        <a href="#" class="swiper-slide"><img src="/Pictures/Book5.png" alt=""></a>
+                        <a href="#" class="swiper-slide"><img src="/Pictures/Book6.png" alt=""></a>
+                        <a href="#" class="swiper-slide"><img src="/Pictures/Book6.png" alt=""></a>
+                        <a href="#" class="swiper-slide"><img src="/Pictures/Book6.png" alt=""></a>
                     </div>
                 </div>
             </div>
-        </div>
-        
-
-
-        
+        </section>
     </div>
     <script src="StudentPage-Home.js"></script>
 </body>
