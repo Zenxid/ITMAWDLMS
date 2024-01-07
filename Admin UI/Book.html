@@ -5,52 +5,102 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Book Management</title>
     <link rel="stylesheet" href="Book.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 </head>
 <body>
     <div class="container">
         <div class="sidebar">
-            <ul>
+            <div class="logo_details">
+                <img src="/Pictures/STI-Small.png">
+                <div class="logo_name">Admin Office</div>
+                <i class="bx bx-menu" id="btn"></i>
+            </div>
+            <ul class="nav-list">
                 <li>
-                    <a href="#">
-                        <img src="/Pictures/STI-Small.png">
-                        <div class="title">Books Management</div>
-                    </a>
-                </li>
-                <li>
+                    <div class="icon-link">
                     <a href="Dashboard.html">
-                        <span class="material-symbols-outlined">empty_dashboard</span>
-                        <div class="title">Dashboard</div>
+                        <i class="bx bx-grid-alt"></i>
+                        <span class="link_name">Dashboard</span>
                     </a>
+                    <span class="tooltip">Dashboard</span>
+                    </div>
                 </li>
+
                 <li>
-                    <a href="#">
-                        <span class="material-symbols-outlined">book_4</span>
-                        <div class="title">Books Management</div>
-                    </a>
+                    <div class="icon-link">
+                        <a href="Book.html" class="menu-link book-link">
+                            <i class='bx bxs-book'></i>
+                            <span class="link_name">Book Management</span>
+                        </a>
+                        <i class='bx bx-chevron-down drop-down'></i>
+                    </div>
+                    <ul class="sub-menu">
+                        <li><p class="link_name">Book Management</p></li>
+                        <li><a href="Book-Database.html">Books Database</a></li>
+                        <li><a href="#">Archive</a></li>
+                    </ul>
                 </li>
+
                 <li>
-                    <a href="#">
-                        <span class="material-symbols-outlined">star</span>
-                        <div class="title">Activities Management</div>
-                    </a>
+                    <div class="icon-link">
+                        <a href="#" class="menu-link book-link">
+                            <i class='bx bx-joystick'></i>
+                            <span class="link_name">Activities Management</span>
+                        </a>
+                        <i class='bx bx-chevron-down drop-down'></i>
+                    </div>
+                    <ul class="sub-menu">
+                        <li><p class="link_name">Activities Management</p></li>
+                        <li><a href="#">PC</a></li>
+                        <li><a href="#">PS4</a></li>
+                        <li><a href="#">Board Games</a></li>
+                    </ul>
                 </li>
+
                 <li>
-                    <a href="#">
-                        <span class="material-symbols-outlined">person_add</span>
-                        <div class="title">Register Management</div>
-                    </a>
+                    <div class="icon-link">
+                        <a href="#" class="menu-link book-link">
+                            <i class='bx bx-user'></i>
+                            <span class="link_name">User Management</span>
+                        </a>
+                        <i class='bx bx-chevron-down drop-down'></i>
+                    </div>
+                    <ul class="sub-menu">
+                        <li><p class="link_name">User Management</p></li>
+                        <li><a href="#">Moderator</a></li>
+                        <li><a href="#">Teacher</a></li>
+                        <li><a href="#">Student</a></li>
+                    </ul>
                 </li>
+
                 <li>
-                    <a href="#">
-                        <span class="material-symbols-outlined">settings</span>
-                        <div class="title">Setting</div>
-                    </a>
+                    <div class="icon-link">
+                        <a href="#">
+                            <i class='bx bx-message-rounded-dots'></i>
+                            <span class="link_name">Message</span>
+                        </a>
+                        <span class="tooltip">Message</span>
+                    </div>
+                </li>   
+                <li>
+                <div class="profile-details">
+                    <div class="profile-content">
+                        <img src="https://upload.wikimedia.org/wikipedia/en/1/14/Balltze_%28Cheems%29.jpg" alt="profile">
+                    </div>
+                    <div class="name-job">
+                        <div class="profile_name">Cheems The Admin</div>
+                        <div class="profile_status">Admin</div>
+                    </div>
+                    <i class='bx bx-log-out'></i>
+                </div>
                 </li>
             </ul>
         </div>
+        <!------- END OF SIDEBAR ------>
         <div class="main">
             <div class="top-bar">
+                <div class="top-title">Book Management</div>
                 <span class="material-symbols-outlined">notifications</span>
             </div>
             <form action="" id="bookForm">
@@ -101,7 +151,7 @@
                         <th>Quantity</th>
                         <th>ISBN</th>
                         <th>Actions</th>
-                    </tr>
+                    </tr>   
                 </thead>
                 <tbody id="tableBody"></tbody>
             </table>
