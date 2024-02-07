@@ -1,0 +1,132 @@
+.table_header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px;
+    border-bottom: 1px solid black;
+}
+
+.board .table-wrap .table_header .title {
+    font-size: 20px;
+    color: #000000;
+}
+
+.table_header div button {
+    outline: none;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.table_header div .add_new {
+    padding: 5px 15px;
+    color: #fff;
+    background-color: #0298cf;
+}
+
+.table_header div input {
+    padding: 5px 15px;
+    margin: 0 10px;
+    outline: none;
+    border: 1px solid #0298cf;
+    border-radius: 6px;
+}
+
+.table_header div input::placeholder {
+    font-size: 12px;
+}
+
+.board {
+    width: 98%;
+    margin: 5px 0 0 10px;
+    overflow: auto;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    white-space: nowrap;
+}
+
+.board .title {
+    font-size: 20px;
+    font-weight: 600;
+    margin: 15px;
+    color: rgb(94, 87, 87);
+    border-bottom: #eef0f3;
+}
+
+.board .table-wrap {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+}
+.board img {
+    width: 45px;
+    height: 45px;
+    object-fit: cover;
+    border-radius: 20%;
+    margin-right: 15px;
+}
+
+.board p {
+    font-weight: 400;
+    font-size: 13px;
+    color: #787d8d;
+}
+
+.board .profile {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+table {
+    border-collapse: collapse;
+}
+
+tr {
+    border-bottom: 1px solid #eef0f3;
+}
+
+thead td {
+    font-size: 14px;
+    text-transform: uppercase;
+    font-weight: 600;
+    background-color: #F9FAFB;
+    text-align: start;
+    padding: 15px;
+    white-space: nowrap;
+    overflow: hidden; 
+}
+
+tbody tr td {
+    padding: 10px 15px;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.active p {
+    background: #d7fada;
+    padding: 2px 10px;
+    display: inline-block;
+    border-radius: 40px;
+    color: #2b2b2b;
+}
+
+.status p {
+    background-color: #fad7d7;
+    padding: 2px 10px;
+    display: inline-block;
+    border-radius: 40px;
+    color: #2b2b2b;
+}
+
+.board .staus, .board .active, .board .schedule {
+    text-align: center;
+}
+.data-buttons button {
+    outline: none;
+    border: none;
+    cursor: pointer;
+    border-radius: 6px;
+    padding: 5px;
+}
+/* ----------------------------------------- END OF TABLE ------------------------------ */

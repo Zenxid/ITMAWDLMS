@@ -22,10 +22,9 @@ if (isset($_POST['click_update_btn'])) {
     }
 }
 
-if(isset($_POST['update_data']))
-{   
+
+if (isset($_POST['update_data'])) {
     $id = $_POST['id'];
-    $cover = $_POST['image'];
     $title = $_POST['title'];
     $author = $_POST['author'];
     $genre = $_POST['genre'];
@@ -33,16 +32,30 @@ if(isset($_POST['update_data']))
     $quantity = $_POST['quantity'];
     $isbn = $_POST['isbn'];
 
+
+    if (isset($_FILES['imageInput']) && $_FILES['imageInput']['error'] === UPLOAD_ERR_OK) {
+        $temp = $_FILES['imageInput']['tmp_name'];
+        $cover = base64_encode(file_get_contents($temp));
+    } else {
+        $existingCoverQuery = "SELECT Cover FROM book WHERE ID='$id'";
+        $existingCoverResult = mysqli_query($con, $existingCoverQuery);
+        if ($existingCoverResult && mysqli_num_rows($existingCoverResult) > 0) {
+            $row = mysqli_fetch_assoc($existingCoverResult);
+            $cover = $row['Cover'];
+        } else {
+            $cover = '';
+        }
+    }
+
     $update_query = "UPDATE book SET Cover='$cover', Title='$title', Author='$author', Genre='$genre', 
     Year='$year', Quantity='$quantity', ISBN='$isbn' WHERE ID='$id'";
     $update_query_run = mysqli_query($con, $update_query);
 
     if ($update_query_run) {
-        header('Location: Book-Database.php');
+       
     } else {
-        echo "Error: " . mysqli_error($con);
+        echo "Error updating record: " . mysqli_error($con);
     }
-
 }
 
 ?>

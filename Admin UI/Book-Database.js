@@ -103,26 +103,7 @@ function showtable(curarray) {
 
 
 
+
 /* ------------------------------------------ END OF TABLE JAVASCRIPT CODE ------------------------------ */
-
-document.querySelector(".add_new").addEventListener("click", function(){
-    document.querySelector(".popup").classList.add("active");
-});
-
-document.querySelector(".popup .close-btn").addEventListener("click", function(){
-    document.querySelector(".popup").classList.remove("active");
-});
-
-document.querySelectorAll(".update-btn").forEach(btn => {
-    btn.addEventListener("click", function() {
-        document.querySelector(".update-popup").classList.add("active");
-    });
-});
-
-document.querySelector(".update-popup .close-btn").addEventListener("click", function(){
-    document.querySelector(".update-popup").classList.remove("active");
-});
-
-
 
 

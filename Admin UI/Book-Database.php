@@ -19,8 +19,7 @@ if(isset($_GET['deleteid'])){
 
 
 
-if(isset($_POST['submit'])) {
-    $cover = $_POST['image'];
+if (isset($_POST['submit'])) {
     $title = $_POST['title'];
     $author = $_POST['author'];
     $genre = $_POST['genre'];
@@ -28,16 +27,34 @@ if(isset($_POST['submit'])) {
     $quantity = $_POST['quantity'];
     $isbn = $_POST['isbn'];
 
+    if (isset($_FILES['image']) && $_FILES['image']['error'] === UPLOAD_ERR_OK) {
+        $temp = $_FILES['image']['tmp_name'];
+        $cover = base64_encode(file_get_contents($temp));
+    } else {
+        $cover = '';  // Set a default value if no file is uploaded
+    }
 
-    $sql="insert into `book` (cover, title, author, genre, year, quantity, isbn) values('$cover', '$title',
-     '$author', '$genre', '$year', '$quantity', '$isbn')";
-      
+    // Database connection and query
+    $sql = "INSERT INTO `book` (cover, title, author, genre, year, quantity, isbn) VALUES (?, ?, ?, ?, ?, ?, ?)";
+    $stmt = mysqli_prepare($con, $sql);
 
-     $result=mysqli_query($con,$sql);
-    if($result){
-        header('location:Book-Database.php');
-    }else{
-        die(mysqli_error($con));
+    // Check if the prepare statement succeeded
+    if ($stmt) {
+        // Bind parameters
+        mysqli_stmt_bind_param($stmt, "ssssisi", $cover, $title, $author, $genre, $year, $quantity, $isbn);
+
+        // Execute the statement
+        if (mysqli_stmt_execute($stmt)) {
+            header('location:Book-Database.php');
+            exit();
+        } else {
+            echo "Error executing statement: " . mysqli_stmt_error($stmt);
+        }
+
+        // Close the statement
+        mysqli_stmt_close($stmt);
+    } else {
+        echo "Error preparing statement: " . mysqli_error($con);
     }
 }
 
@@ -52,6 +69,7 @@ if(isset($_POST['submit'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Book Database</title>
     <link rel="stylesheet" href="Book-Database.css">
+    <link rel="stylesheet" href="sidebar.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     
@@ -60,7 +78,7 @@ if(isset($_POST['submit'])) {
     <div class="container">
         <div class="sidebar">
             <div class="logo_details">
-                <img src="/Pictures/STI-Small.png">
+                <img src="/LMS/Pictures/STI-Small.png">
                 <div class="logo_name">Admin Office</div>
                 <i class="bx bx-menu" id="btn"></i>
             </div>
@@ -156,9 +174,12 @@ if(isset($_POST['submit'])) {
                 <div class="table_header">
                     <p>Book Information Table:</p>
                     <div>
-                        <input placeholder="Search" />
-                        <button class="add_new">+ Add New</button>
+                        <form action="" method="GET">
+                            <input type="text" name="search" value="<?php if(isset($_GET['search'])){echo $_GET['search'];} ?>" placeholder="Search" />
+                            <button type="submit" class="search" style="padding:10px 20px; background-color:#0298cf; color:#fff;">Search</button>
+                        </form>
                     </div>
+                    <button class="add_new" style="padding: 10px 20px; color: #fff; background-color: #0298cf; outline: none; border: none; border-radius: 6px; cursor: pointer;">+ Add New</button>
                 </div>
                 <div class="table_section">
                     <table id="bookTable">
@@ -177,8 +198,17 @@ if(isset($_POST['submit'])) {
                         </thead>
                         <tbody id="tableBody">
                             <?php
-                            $sql="Select * from `book`";
+
+                            $whereClause = "";
+
+                            if (isset($_GET['search'])) {
+                                $searchTerm = mysqli_real_escape_string($con, $_GET['search']);
+                                $whereClause = "WHERE Title LIKE '%$searchTerm%' OR Author LIKE '%$searchTerm%' OR Genre LIKE '%$searchTerm%'";
+                            }
+
+                            $sql="Select * from `book` $whereClause";
                             $result=mysqli_query($con,$sql);
+
                             if($result){
                                 while($row=mysqli_fetch_assoc($result)) {
                                     $id=$row['ID'];
@@ -189,9 +219,10 @@ if(isset($_POST['submit'])) {
                                     $year=$row['Year'];
                                     $quantity=$row['Quantity'];
                                     $isbn=$row['ISBN'];
+                                    $decodedCover = base64_decode($row['Cover']);
                                     echo '<tr>
                                     <td class="user_id">'.$id.'</td>
-                                    <td><img src="data:image;base64,'.base64_encode($row['Cover']).'" alt="Book Cover" style="width:80px; height:80px;" ></td>
+                                    <td><img src="data:image;base64,' . base64_encode($decodedCover) . '" alt="Book Cover" style="width:80px; height:80px;"></td>
                                     <td>'.$title.'</td>
                                     <td>'.$author.'</td>
                                     <td>'.$genre.'</td>
@@ -218,14 +249,14 @@ if(isset($_POST['submit'])) {
             <div class="popup">
                 <div class="close-btn">&times;</div>
                 <h2>Fill the Form</h2>
-                <form method="post" enctype="multipart/form-data">
+                <form action="Book-Database.php" method="post" enctype="multipart/form-data">
                     <div class="form">
                         <div class="img-card">
                             <label for="imgInput" class="upload">
-                                <input type="file" name="image" id="imgInput">
+                                <input type="file" name="image" id="imgInput" onchange="display_image(this.files[0])">
                                 <i class='bx bxs-plus-circle'></i>
                             </label>
-                            <img src="/Pictures/Cover.png" alt="" width="200" height="200">
+                            <img id="previewImage" src="../Pictures/Cover.png" alt="" width="200" height="200">
                         </div>
                         <div class="form-card">
                             <div class="form-element">
@@ -264,14 +295,14 @@ if(isset($_POST['submit'])) {
             <div class="update-popup" id="editdata">
                 <div class="close-btn">&times;</div>
                 <h2>Fill the Form</h2>
-                <form method="post">
+                <form action="Book-Database.php" method="post" enctype="multipart/form-data">
                     <div class="form">
                         <div class="img-card">
-                            <label for="imgInput" class="upload">
-                                <input type="file" id="image" name="image" id="imgInput">
+                            <label for="imgInputModal" class="upload">
+                                <input type="file" name="imageInput" id="imgInputModal" onchange="display_image2(this.files[0])">
                                 <i class='bx bxs-plus-circle'></i>
                             </label>
-                            <img src="/Pictures/Cover.png" alt="" width="200" height="200">
+                            <img id="previewImageModal" src="../Pictures/Cover.png" alt="" width="200" height="200">
                         </div>
                         <div class="form-card">
                             <div class="form-element">
@@ -302,7 +333,7 @@ if(isset($_POST['submit'])) {
                                 <input type="number" id="isbn" placeholder="Enter ISBN" name="isbn" autocomplete="off">
                             </div>
                             <div class="form-element">
-                                <button type="submit" class="btn-primary" name="update_data">Update</button>
+                                <button type="submit" class="updatebtn-form" name="update_data">Update</button>
                             </div>
                         </div> 
                     </div>
@@ -321,7 +352,42 @@ if(isset($_POST['submit'])) {
 </body>
 </html>
 
-<?php include 'update.php' ?>
+
+<script>
+        document.querySelector(".add_new").addEventListener("click", function(){
+            document.querySelector(".popup").classList.add("active");
+        });
+
+        document.querySelector(".popup .close-btn").addEventListener("click", function(){
+            document.querySelector(".popup").classList.remove("active");
+        });
+
+        document.querySelectorAll(".update-btn").forEach(btn => {
+            btn.addEventListener("click", function() {
+                document.querySelector(".update-popup").classList.add("active");
+            });
+        });
+
+        document.querySelector(".update-popup .close-btn").addEventListener("click", function(){
+            document.querySelector(".update-popup").classList.remove("active");
+        });
+
+    function display_image(file) 
+    {
+        var img = document.getElementById("previewImage");
+        img.src = URL.createObjectURL(file);
+
+    }
+
+    function display_image2(file) 
+    {
+        var img = document.getElementById("previewImageModal");
+        img.src = URL.createObjectURL(file);
+
+    }
+
+</script>
+
 
 <script>
 
@@ -345,8 +411,8 @@ $(document).ready(function () {
                 $.each(response, function(Key, value){
 
                     
-                    $('#image').attr('src', value['Cover']);
-                    $('#user_id').val(value['id']);
+                    $('#previewImageModal').attr('src', 'data:image/png;base64,' + value.Cover);
+                    $('#user_id').val(value['ID']);
                     $('#title').val(value['Title']);
                     $('#author').val(value['Author']);
                     $('#genre').val(value['Genre']);
@@ -354,13 +420,21 @@ $(document).ready(function () {
                     $('#quantity').val(value['Quantity']);
                     $('#isbn').val(value['ISBN']);
 
+
                 })
 
+            },
+            error: function (xhr, status, error) {
+                console.error(xhr.responseText); 
             }
         })
 
     });
 
 });
+
+
+
+
 
 </script>
