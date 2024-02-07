@@ -9,29 +9,112 @@
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
 <body>
-    <div class="container">
+    <div class="home">
         <header class="header">
             <div class="header-1">
                 <div class="logo-details">
-                <img src="/Pictures/STI-Small.png" class="logo">
+                <img src="../Pictures/STI-Small.png" class="logo">
                 <p>STI College Muñoz-EDSA Library</p>
                 </div>
 
                 <div class="icons">
-                    <i class='bx bx-bell'></i>
-                    <i class='bx bx-book'></i>
+                    <i class='bx bx-bell notification'></i>
+                    <i class='bx bx-book book-notification'></i>
                     <a href="StudentProfile.html"><img src="https://upload.wikimedia.org/wikipedia/en/1/14/Balltze_%28Cheems%29.jpg" class="profile"></a>
                 </div>
             </div>
 
             <div class="header-2">
                 <div class="navbar">
-                    <a href="StudentPage-Home.html">Home</a>
+                    <a href="StudentPage-Home.php">Home</a>
                     <a href="StudentPage-Book.html">Book</a>
                     <a href="#">Board Games</a>
                     <a href="#">PS4</a>
                     <a href="#">PC</a>
                 </div>
+            </div>
+
+            <div class="notifications_dd">
+                <ul class="notifications_ul">
+                    <li class="success">
+                        <div class="notify_icon">
+                            <span class="icon"></span>
+                        </div>
+                        <div class="notify_data">
+                            <div class="title">
+                                Markiplier will hunt you.
+                            </div>
+                            <div class="sub_title">
+                                You have 10 mins left.
+                            </div>
+                        </div>
+                    </li>
+                    <li class="failed">
+                        <div class="notify_icon">
+                            <span class="icon"></span>
+                        </div>
+                        <div class="notify_data">
+                            <div class="title">
+                                Lorem ipsum dolor sit.
+                            </div>
+                            <div class="sub_title">
+                                Lorem ipsum dolor sit amet,
+                                consecutor.
+                            </div>
+                        </div>
+                        <div class="notify_status">
+                            <a href="#"><p>Check</p></a>
+                        </div>
+                    </li>
+                    <li class="show_all">
+                        <a href="#" class="link">Show All Notifications</a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="borrow-book">
+                <div class="book-box">
+                    <i class='bx bxs-trash trash' ></i>
+                    <img src="../Pictures/Book2.png" alt="image">
+                    <div class="book-content">
+                        <h3>Book</h3>
+                        <span class="quantity">Quantity: 1</span>
+                    </div>
+                </div>
+                <div class="book-box">
+                    <i class='bx bxs-trash trash' ></i>
+                    <img src="../Pictures/Book3.png" alt="image">
+                    <div class="book-content">
+                        <h3>Book</h3>
+                        <span class="quantity">Quantity: 1</span>
+                    </div>
+                </div>
+                <div class="book-box">
+                    <i class='bx bxs-trash trash' ></i>
+                    <img src="../Pictures/Book4.png" alt="image">
+                    <div class="book-content">
+                        <h3>Book</h3>
+                        <span class="quantity">Quantity: 1</span>
+                    </div>
+                </div>
+                <div class="book-box">
+                    <i class='bx bxs-trash trash' ></i>
+                    <img src="../Pictures/Book5.png" alt="image">
+                    <div class="book-content">
+                        <h3>Book</h3>
+                        <span class="quantity">Quantity: 1</span>
+                    </div>
+                </div>
+                <div class="book-box">
+                    <i class='bx bxs-trash trash' ></i>
+                    <img src="../Pictures/Book6.png" alt="image">
+                    <div class="book-content">
+                        <h3>Book</h3>
+                        <span class="quantity">Quantity: 1</span>
+                    </div>
+                </div>
+                <a href="#" class="borrow-btn">Borrow</a>
+                <a href="StudentPage-Borrowing.html" class="view-btn">View Books</a>
             </div>
 
         </header>
@@ -47,6 +130,691 @@
         </div>
 
         <!------------------------------- END OF BOTTOM NAVBAR ------------------------->
+
+        
+        <div class="books">
+            <div class="container">
+                <div class="wrapper">
+                    <div class="sectop flexitem">
+                        <h2><span class="circle"></span><span>Books</span></h2>
+                        <form action="" class="search">
+                            <span class="icon-large"><i class='bx bx-search-alt-2'></i></span>
+                            <input type="search" placeholder="Search for Books">
+                            <button type="submit">Search</button>
+                        </form>
+                    </div>
+                    <div class="single-category">
+                        <div class="container">
+                            <div class="wrapper">
+                                <div class="column">
+                                    <div class="holder">
+                                            <div class="row sidebar">
+                                                <div class="filter">
+                                                    <div class="filter-block">
+                                                        <h4>Genre</h4>
+                                                        <ul>
+                                                            <li>
+                                                                <input type="checkbox" name="checkbox" id="Thesis">
+                                                                <label for="Thesis">
+                                                                    <span class="checked"></span>
+                                                                    <span>Thesis</span>
+                                                                </label>
+                                                                <span class="count">14</span>
+                                                            </li>
+                                                            <li>
+                                                                <input type="checkbox" name="checkbox" id="Culinary">
+                                                                <label for="Culinary">
+                                                                    <span class="checked"></span>
+                                                                    <span>Culinary</span>
+                                                                </label>
+                                                                <span class="count">7</span>
+                                                            </li>
+                                                            <li>
+                                                                <input type="checkbox" name="checkbox" id="IT">
+                                                                <label for="IT">
+                                                                    <span class="checked"></span>
+                                                                    <span>IT</span>
+                                                                </label>
+                                                                <span class="count">4</span>
+                                                            </li>
+                                                            <li>
+                                                                <input type="checkbox" name="checkbox" id="Programming">
+                                                                <label for="Programming">
+                                                                    <span class="checked"></span>
+                                                                    <span>Programming</span>
+                                                                </label>
+                                                                <span class="count">5</span>
+                                                            </li>
+                                                            <li>
+                                                                <input type="checkbox" name="checkbox" id="Friends">
+                                                                <label for="Friends">
+                                                                    <span class="checked"></span>
+                                                                    <span>Friends</span>
+                                                                </label>
+                                                                <span class="count">10</span>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                    <div class="filter-block">
+                                                        <h4>Fun</h4>
+                                                        <ul>
+                                                            <li>
+                                                                <input type="checkbox" name="checkbox" id="Filipino">
+                                                                <label for="Filipino">
+                                                                    <span class="checked"></span>
+                                                                    <span>Filipino</span>
+                                                                </label>
+                                                                <span class="count">14</span>
+                                                            </li>
+                                                            <li>
+                                                                <input type="checkbox" name="checkbox" id="English">
+                                                                <label for="English">
+                                                                    <span class="checked"></span>
+                                                                    <span>English</span>
+                                                                </label>
+                                                                <span class="count">7</span>
+                                                            </li>
+                                                            <li>
+                                                                <input type="checkbox" name="checkbox" id="Travels">
+                                                                <label for="Travels">
+                                                                    <span class="checked"></span>
+                                                                    <span>Travels</span>
+                                                                </label>
+                                                                <span class="count">4</span>
+                                                            </li>
+                                                            <li>
+                                                                <input type="checkbox" name="checkbox" id="Promise">
+                                                                <label for="Promise">
+                                                                    <span class="checked"></span>
+                                                                    <span>Promise</span>
+                                                                </label>
+                                                                <span class="count">5</span>
+                                                            </li>
+                                                            <li>
+                                                                <input type="checkbox" name="checkbox" id="Manga">
+                                                                <label for="Manga">
+                                                                    <span class="checked"></span>
+                                                                    <span>Manga</span>
+                                                                </label>
+                                                                <span class="count">10</span>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                    <div class="filter-block">
+                                                        <h4>Academics</h4>
+                                                        <ul>
+                                                            <li>
+                                                                <input type="checkbox" name="checkbox" id="Filter">
+                                                                <label for="Filter">
+                                                                    <span class="checked"></span>
+                                                                    <span>Filter</span>
+                                                                </label>
+                                                                <span class="count">14</span>
+                                                            </li>
+                                                            <li>
+                                                                <input type="checkbox" name="checkbox" id="Money">
+                                                                <label for="Money">
+                                                                    <span class="checked"></span>
+                                                                    <span>Money</span>
+                                                                </label>
+                                                                <span class="count">7</span>
+                                                            </li>
+                                                            <li>
+                                                                <input type="checkbox" name="checkbox" id="Guest">
+                                                                <label for="Guest">
+                                                                    <span class="checked"></span>
+                                                                    <span>Guest</span>
+                                                                </label>
+                                                                <span class="count">4</span>
+                                                            </li>
+                                                            <li>
+                                                                <input type="checkbox" name="checkbox" id="Room">
+                                                                <label for="Room">
+                                                                    <span class="checked"></span>
+                                                                    <span>Room</span>
+                                                                </label>
+                                                                <span class="count">5</span>
+                                                            </li>
+                                                            <li>
+                                                                <input type="checkbox" name="checkbox" id="Idea">
+                                                                <label for="Idea">
+                                                                    <span class="checked"></span>
+                                                                    <span>Idea</span>
+                                                                </label>
+                                                                <span class="count">10</span>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                             <div class="section">
+                                                <div class="flexwrap">
+                                                    <div class="row products big" style="display: none;">
+                                                        <div class="item">
+                                                            <div class="popular">
+                                                                <p>Popular book</p>
+                                                            </div>
+                                                            <div class="media">
+                                                                <div class="image">
+                                                                    <a href="#">
+                                                                        <img src="../Pictures/Book1.png">
+                                                                    </a>
+                                                                </div>
+                                                            </div>
+                                                            <div class="hoverable">
+                                                                <ul>
+                                                                    <li class="active"><a href="#"><i class='bx bx-heart'></i></a></li>
+                                                                    <li><a href=""><i class='bx bx-book'></i></a></li>
+                                                                    <li><a href="sbook.html"><i class="fa-regular fa-eye"></i></a></li>
+                                                                </ul>
+                                                            </div>
+                                                            <div class="top circle flexcenter"><span>#1</span></div>
+                                                            <div class="content">
+                                                                <div class="rating">
+                                                                    <div class="stars"></div>
+                                                                    <span class="mini-text">(5)</span>
+                                                                </div>
+
+                                                                <h3 class="main-links"><a href="#">This is a Book! Book is Knowledge</a></h3>
+                                                                <div class="status">
+                                                                    <span class="current">Available</span>
+                                                                </div>
+                                                                <div class="stock mini-text">
+                                                                    <div class="qty">
+                                                                        <span>Stock: <strong class="qty-available">25</strong></span>
+                                                                        <span>Borrowed: <strong class="qty-available">12</strong></span>
+                                                                    </div>
+                                                                    <div class="bar">
+                                                                        <div class="available"></div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row products mini">
+                                                        <div class="item">
+                                                            <div class="thumbnail object-cover">
+                                                                <div class="image">
+                                                                    <a href="#">
+                                                                        <img src="../Pictures/Book2.png">
+                                                                    </a>
+                                                                </div>
+                                                            </div>
+                                                            <div class="hoverable">
+                                                                <ul>
+                                                                    <li class="active"><a href="#"><i class='bx bx-heart'></i></a></li>
+                                                                    <li><a href=""><i class='bx bx-book'></i></a></li>
+                                                                    <li><a href="sbook.html"><i class="fa-regular fa-eye"></i></a></li>
+                                                                </ul>
+                                                            </div>
+                                                            <div class="content">
+                                                                <h3 class="main-links"><a href="#">Another Book!</a></h3>
+
+                                                                <div class="rating">
+                                                                    <div class="stars"></div>
+                                                                    <span class="mini-text">(5)</span>
+                                                                </div>
+
+                                                                <div class="status">
+                                                                    <span class="current">Available</span>
+                                                                </div>
+                                                                <div class="mini-text">
+                                                                    <p>4 Borrowed</p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="item">
+                                                            <div class="thumbnail object-cover">
+                                                                <div class="image">
+                                                                    <a href="#">
+                                                                        <img src="../Pictures/Book3.png">
+                                                                    </a>
+                                                                </div>
+                                                            </div>
+                                                            <div class="hoverable">
+                                                                <ul>
+                                                                    <li class="active"><a href="#"><i class='bx bx-heart'></i></a></li>
+                                                                    <li><a href=""><i class='bx bx-book'></i></a></li>
+                                                                    <li><a href="sbook.html"><i class="fa-regular fa-eye"></i></a></li>
+                                                                </ul>
+                                                            </div>
+                                                            <div class="content">
+                                                                <h3 class="main-links"><a href="#">Bam Book!</a></h3>
+
+                                                                <div class="rating">
+                                                                    <div class="stars"></div>
+                                                                    <span class="mini-text">(1)</span>
+                                                                </div>
+
+                                                                <div class="status">
+                                                                    <span class="current">Available</span>
+                                                                </div>
+                                                                <div class="mini-text">
+                                                                    <p>8 Borrowed</p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="item">
+                                                            <div class="thumbnail object-cover">
+                                                                <div class="image">
+                                                                    <a href="#">
+                                                                        <img src="../Pictures/Book2.png">
+                                                                    </a>
+                                                                </div>
+                                                            </div>
+                                                            <div class="hoverable">
+                                                                <ul>
+                                                                    <li class="active"><a href="#"><i class='bx bx-heart'></i></a></li>
+                                                                    <li><a href=""><i class='bx bx-book'></i></a></li>
+                                                                    <li><a href="sbook.html"><i class="fa-regular fa-eye"></i></a></li>
+                                                                </ul>
+                                                            </div>
+                                                            <div class="content">
+                                                                <h3 class="main-links"><a href="#">Another Book!</a></h3>
+
+                                                                <div class="rating">
+                                                                    <div class="stars"></div>
+                                                                    <span class="mini-text">(5)</span>
+                                                                </div>
+
+                                                                <div class="status">
+                                                                    <span class="current">Available</span>
+                                                                </div>
+                                                                <div class="mini-text">
+                                                                    <p>4 Borrowed</p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="item">
+                                                            <div class="thumbnail object-cover">
+                                                                <div class="image">
+                                                                    <a href="#">
+                                                                        <img src="../Pictures/Book3.png">
+                                                                    </a>
+                                                                </div>
+                                                            </div>
+                                                            <div class="hoverable">
+                                                                <ul>
+                                                                    <li class="active"><a href="#"><i class='bx bx-heart'></i></a></li>
+                                                                    <li><a href=""><i class='bx bx-book'></i></a></li>
+                                                                    <li><a href="sbook.html"><i class="fa-regular fa-eye"></i></a></li>
+                                                                </ul>
+                                                            </div>
+                                                            <div class="content">
+                                                                <h3 class="main-links"><a href="#">Bam Book!</a></h3>
+
+                                                                <div class="rating">
+                                                                    <div class="stars"></div>
+                                                                    <span class="mini-text">(1)</span>
+                                                                </div>
+
+                                                                <div class="status">
+                                                                    <span class="current">Available</span>
+                                                                </div>
+                                                                <div class="mini-text">
+                                                                    <p>8 Borrowed</p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="item">
+                                                            <div class="thumbnail object-cover">
+                                                                <div class="image">
+                                                                    <a href="">
+                                                                        <img src="../Pictures/Book2.png">
+                                                                    </a>
+                                                                </div>
+                                                            </div>
+                                                            <div class="hoverable">
+                                                                <ul>
+                                                                    <li class="active"><a href="#"><i class='bx bx-heart'></i></a></li>
+                                                                    <li><a href=""><i class='bx bx-book'></i></a></li>
+                                                                    <li><a href="sbook.html"><i class="fa-regular fa-eye"></i></a></li>
+                                                                </ul>
+                                                            </div>
+                                                            <div class="content">
+                                                                <h3 class="main-links"><a href="#">Another Book!</a></h3>
+
+                                                                <div class="rating">
+                                                                    <div class="stars"></div>
+                                                                    <span class="mini-text">(5)</span>
+                                                                </div>
+
+                                                                <div class="status">
+                                                                    <span class="current">Available</span>
+                                                                </div>
+                                                                <div class="mini-text">
+                                                                    <p>4 Borrowed</p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row products mini">
+                                                        <div class="item">
+                                                            <div class="thumbnail object-cover">
+                                                                <div class="image">
+                                                                    <a href="#">
+                                                                        <img src="../Pictures/Book3.png">
+                                                                    </a>
+                                                                </div>
+                                                            </div>
+                                                            <div class="hoverable">
+                                                                <ul>
+                                                                    <li class="active"><a href="#"><i class='bx bx-heart'></i></a></li>
+                                                                    <li><a href=""><i class='bx bx-book'></i></a></li>
+                                                                    <li><a href="sbook.html"><i class="fa-regular fa-eye"></i></a></li>
+                                                                </ul>
+                                                            </div>
+                                                            <div class="content">
+                                                                <h3 class="main-links"><a href="#">Bam Book!</a></h3>
+
+                                                                <div class="rating">
+                                                                    <div class="stars"></div>
+                                                                    <span class="mini-text">(1)</span>
+                                                                </div>
+
+                                                                <div class="status">
+                                                                    <span class="current">Available</span>
+                                                                </div>
+                                                                <div class="mini-text">
+                                                                    <p>8 Borrowed</p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="item">
+                                                            <div class="thumbnail object-cover">
+                                                                <div class="image">
+                                                                    <a href="#">
+                                                                        <img src="../Pictures/Book2.png">
+                                                                    </a>
+                                                                </div>
+                                                            </div>
+                                                            <div class="hoverable">
+                                                                <ul>
+                                                                    <li class="active"><a href="#"><i class='bx bx-heart'></i></a></li>
+                                                                    <li><a href=""><i class='bx bx-book'></i></a></li>
+                                                                    <li><a href="sbook.html"><i class="fa-regular fa-eye"></i></a></li>
+                                                                </ul>
+                                                            </div>
+                                                            <div class="content">
+                                                                <h3 class="main-links"><a href="#">Another Book!</a></h3>
+
+                                                                <div class="rating">
+                                                                    <div class="stars"></div>
+                                                                    <span class="mini-text">(5)</span>
+                                                                </div>
+
+                                                                <div class="status">
+                                                                    <span class="current">Available</span>
+                                                                </div>
+                                                                <div class="mini-text">
+                                                                    <p>4 Borrowed</p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="item">
+                                                            <div class="thumbnail object-cover">
+                                                                <div class="image">
+                                                                    <a href="#">
+                                                                        <img src="../Pictures/Book3.png">
+                                                                    </a>
+                                                                </div>
+                                                            </div>
+                                                            <div class="hoverable">
+                                                                <ul>
+                                                                    <li class="active"><a href="#"><i class='bx bx-heart'></i></a></li>
+                                                                    <li><a href=""><i class='bx bx-book'></i></a></li>
+                                                                    <li><a href="sbook.html"><i class="fa-regular fa-eye"></i></a></li>
+                                                                </ul>
+                                                            </div>
+                                                            <div class="content">
+                                                                <h3 class="main-links"><a href="#">Bam Book!</a></h3>
+
+                                                                <div class="rating">
+                                                                    <div class="stars"></div>
+                                                                    <span class="mini-text">(1)</span>
+                                                                </div>
+
+                                                                <div class="status">
+                                                                    <span class="current">Available</span>
+                                                                </div>
+                                                                <div class="mini-text">
+                                                                    <p>8 Borrowed</p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="item">
+                                                            <div class="thumbnail object-cover">
+                                                                <div class="image">
+                                                                    <a href="#">
+                                                                        <img src="../Pictures/Book2.png">
+                                                                    </a>
+                                                                </div>
+                                                            </div>
+                                                            <div class="hoverable">
+                                                                <ul>
+                                                                    <li class="active"><a href="#"><i class='bx bx-heart'></i></a></li>
+                                                                    <li><a href=""><i class='bx bx-book'></i></a></li>
+                                                                    <li><a href="sbook.html"><i class="fa-regular fa-eye"></i></a></li>  
+                                                                </ul>
+                                                            </div>
+                                                            <div class="content">
+                                                                <h3 class="main-links"><a href="#">Another Book!</a></h3>
+
+                                                                <div class="rating">
+                                                                    <div class="stars"></div>
+                                                                    <span class="mini-text">(5)</span>
+                                                                </div>
+
+                                                                <div class="status">
+                                                                    <span class="current">Available</span>
+                                                                </div>
+                                                                <div class="mini-text">
+                                                                    <p>4 Borrowed</p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="item">
+                                                            <div class="thumbnail object-cover">
+                                                                <div class="image">
+                                                                    <a href="#">
+                                                                        <img src="../Pictures/Book3.png">
+                                                                    </a>
+                                                                </div>
+                                                            </div>
+                                                            <div class="hoverable">
+                                                                <ul>
+                                                                    <li class="active"><a href="#"><i class='bx bx-heart'></i></a></li>
+                                                                    <li><a href="#"><i class='bx bx-book'></i></a></li>
+                                                                    <li><a href="sbook.html"><i class="fa-regular fa-eye"></i></a></li>
+                                                                </ul>
+                                                            </div>
+                                                            <div class="content">
+                                                                <h3 class="main-links"><a href="#">Bam Book!</a></h3>
+
+                                                                <div class="rating">
+                                                                    <div class="stars"></div>
+                                                                    <span class="mini-text">(1)</span>
+                                                                </div>
+
+                                                                <div class="status">
+                                                                    <span class="current">Available</span>
+                                                                </div>
+                                                                <div class="mini-text">
+                                                                    <p>8 Borrowed</p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row products mini">
+                                                        <div class="item">
+                                                            <div class="thumbnail object-cover">
+                                                                <div class="image">
+                                                                    <a href="#">
+                                                                        <img src="../Pictures/Book2.png">
+                                                                    </a>
+                                                                </div>
+                                                            </div>
+                                                            <div class="hoverable">
+                                                                <ul>
+                                                                    <li class="active"><a href="#"><i class='bx bx-heart'></i></a></li>
+                                                                    <li><a href=""><i class='bx bx-book'></i></a></li>
+                                                                    <li><a href="sbook.html"><i class="fa-regular fa-eye"></i></a></li>
+                                                                </ul>
+                                                            </div>
+                                                            <div class="content">
+                                                                <h3 class="main-links"><a href="#">Another Book!</a></h3>
+
+                                                                <div class="rating">
+                                                                    <div class="stars"></div>
+                                                                    <span class="mini-text">(5)</span>
+                                                                </div>
+
+                                                                <div class="status">
+                                                                    <span class="current">Available</span>
+                                                                </div>
+                                                                <div class="mini-text">
+                                                                    <p>4 Borrowed</p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="item">
+                                                            <div class="thumbnail object-cover">
+                                                                <div class="image">
+                                                                    <a href="#">
+                                                                        <img src="../Pictures/Book3.png">
+                                                                    </a>
+                                                                </div>
+                                                            </div>
+                                                            <div class="hoverable">
+                                                                <ul>
+                                                                    <li class="active"><a href="#"><i class='bx bx-heart'></i></a></li>
+                                                                    <li><a href=""><i class='bx bx-book'></i></a></li>
+                                                                    <li><a href="sbook.html"><i class="fa-regular fa-eye"></i></a></li>
+                                                                </ul>
+                                                            </div>
+                                                            <div class="content">
+                                                                <h3 class="main-links"><a href="#">Bam Book!</a></h3>
+
+                                                                <div class="rating">
+                                                                    <div class="stars"></div>
+                                                                    <span class="mini-text">(1)</span>
+                                                                </div>
+
+                                                                <div class="status">
+                                                                    <span class="current">Available</span>
+                                                                </div>
+                                                                <div class="mini-text">
+                                                                    <p>8 Borrowed</p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="item">
+                                                            <div class="thumbnail object-cover">
+                                                                <div class="image">
+                                                                    <a href="#">
+                                                                        <img src="../Pictures/Book2.png">
+                                                                    </a>
+                                                                </div>
+                                                            </div>
+                                                            <div class="hoverable">
+                                                                <ul>
+                                                                    <li class="active"><a href="#"><i class='bx bx-heart'></i></a></li>
+                                                                    <li><a href=""><i class='bx bx-book'></i></a></li>
+                                                                    <li><a href="sbook.html"><i class="fa-regular fa-eye"></i></a></li>
+                                                                </ul>
+                                                            </div>
+                                                            <div class="content">
+                                                                <h3 class="main-links"><a href="#">Another Book!</a></h3>
+
+                                                                <div class="rating">
+                                                                    <div class="stars"></div>
+                                                                    <span class="mini-text">(5)</span>
+                                                                </div>
+
+                                                                <div class="status">
+                                                                    <span class="current">Available</span>
+                                                                </div>
+                                                                <div class="mini-text">
+                                                                    <p>4 Borrowed</p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="item">
+                                                            <div class="thumbnail object-cover">
+                                                                <div class="image">
+                                                                    <a href="#">
+                                                                        <img src="../Pictures/Book3.png">
+                                                                    </a>
+                                                                </div>
+                                                            </div>
+                                                            <div class="hoverable">
+                                                                <ul>
+                                                                    <li class="active"><a href="#"><i class='bx bx-heart'></i></a></li>
+                                                                    <li><a href=""><i class='bx bx-book'></i></a></li>
+                                                                    <li><a href="sbook.html"><i class="fa-regular fa-eye"></i></a></li>
+                                                                </ul>
+                                                            </div>
+                                                            <div class="content">
+                                                                <h3 class="main-links"><a href="#">Bam Book!</a></h3>
+
+                                                                <div class="rating">
+                                                                    <div class="stars"></div>
+                                                                    <span class="mini-text">(1)</span>
+                                                                </div>
+
+                                                                <div class="status">
+                                                                    <span class="current">Available</span>
+                                                                </div>
+                                                                <div class="mini-text">
+                                                                    <p>8 Borrowed</p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="item">
+                                                            <div class="thumbnail object-cover">
+                                                                <div class="image">
+                                                                    <a href="#">
+                                                                        <img src="../Pictures/Book2.png">
+                                                                    </a>
+                                                                </div>
+                                                            </div>
+                                                            <div class="hoverable">
+                                                                <ul>
+                                                                    <li class="active"><a href="#"><i class='bx bx-heart'></i></a></li>
+                                                                    <li><a href=""><i class='bx bx-book'></i></a></li>
+                                                                    <li><a href="sbook.html"><i class="fa-regular fa-eye"></i></a></li>
+                                                                </ul>
+                                                            </div>
+                                                            <div class="content">
+                                                                <h3 class="main-links"><a href="#">Another Book!</a></h3>
+
+                                                                <div class="rating">
+                                                                    <div class="stars"></div>
+                                                                    <span class="mini-text">(5)</span>
+                                                                </div>
+
+                                                                <div class="status">
+                                                                    <span class="current">Available</span>
+                                                                </div>
+                                                                <div class="mini-text">
+                                                                    <p>4 Borrowed</p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
     </div>
+
+    <script src="https://kit.fontawesome.com/5eaa044e5f.js" crossorigin="anonymous"></script>
+    <script src="StudentPage-Book.js"></script>
 </body>
 </html>

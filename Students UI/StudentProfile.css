@@ -9,33 +9,58 @@ html {
     scroll-behavior: smooth;
 }
 
-.profile {
-    display: flex;
-    align-items: center;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    padding: 20px;
-    margin: 20px;
+.upload {
+    width: 140px;
+    position: relative;
+    margin: auto;
+    text-align: center;
 }
 
-.profile-picture img {
-    width: 150px;
-    height: 150px;
+.upload img {
     border-radius: 50%;
-    object-fit: cover;
-    border: 2px solid #fff;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border: 2px solid #DCDCDC;
+    width: 125px;
+    height: 125px;
+}
+
+.upload .rightRound {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    background: #00B4FF;
+    width: 32px;
+    height: 32px;
+    line-height: 33px;
+    text-align: center;
+    border-radius: 50%;
+    overflow: hidden;
     cursor: pointer;
 }
 
-.profile-details {
-    margin-left: 20px;
+.upload .leftRound {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background: red;
+    width: 32px;
+    height: 32px;
+    line-height: 33px;
+    text-align: center;
+    border-radius: 50%;
+    overflow: hidden;
+    cursor: pointer;
 }
 
-.profile-details h2 {
-    margin-top: 0;
+.upload i {
+    color: white;
 }
 
-.profile-details p {
-    margin: 5px 0;
+.upload input {
+    position: absolute;
+    transform: scale(2);
+    opacity: 0;
+}
+
+.upload input::-webkit-file-upload-button, .upload input[type=submit] {
+    cursor: pointer;
 }

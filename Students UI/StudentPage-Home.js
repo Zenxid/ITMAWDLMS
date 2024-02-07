@@ -21,3 +21,20 @@ let notification = document.querySelector('.notifications_dd');
 document.querySelector('.notification').onclick = () => {
     notification.classList.toggle('active');
 }
+
+/* ------------------- SWIPER NO SWIPING SWIPER NO SWIPING ----------------- */
+
+const header = document.querySelector("header .header-2");
+var offset = header.offsetTop;
+
+function handleScroll() {
+    if (window.scrollY >= offset) {
+      header.classList.add("fixed");
+    } else {
+      header.classList.remove("fixed");
+    }
+}
+
+window.onscroll = function() {
+    handleScroll();
+  };
