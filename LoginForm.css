@@ -1,96 +1,9 @@
 * {
     box-sizing: border-box;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: sans-serif;
     margin: 0;
-}
-
-.full-screen-container {
-    background-image: url(/Pictures/library-login.jpg);
-    height: 100vh;
-    width: 100vw;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.login-container {
-    background-color: rgba(22, 18, 18, .7);
-    box-shadow: 0 0 15px 0 rgba(22, 18, 18, .7);
-    padding: 40px 30px;
-    width: 80%;
-    max-width: 600px;
-    border-radius: 20px;
-}
-
-.login-title {
-    margin: 0;
-    color: white;
-    text-align: center;
-    font-size: 2rem;
-    font-weight: normal;
-}
-
-.form {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    margin-top: 40px;
-}
-
-.input-group {
-    display: flex;
-    flex-direction: column;
-    gap: 7px;
-}
-
-.input-group label {
-    color: white;
-    font-weight: lighter;
-}
-
-.input-group input {
-    font-size: 1.25rem;
-    padding: .5em;
-    background-color: rgba(138, 123, 123, 0.3);
-    border: none;
-    outline: none;
-    border-radius: .25em;
-    color: white;
-    font-weight: lighter;
-}
-
-.input-group input:focus {
-    box-shadow: 0 0 0 1px rgb(138, 123, 123);
-}
-
-.login-button {
-    padding: .5em 1em;
-    font-size: 1.5rem;
-    font-weight: lighter;
-    color: white;
-    background-color: rgba(81, 201, 238, 0.25);
-    border: 1px solid rgb(81, 201, 238);
-    border-radius: .25em;
-    outline: none;
-    cursor: pointer;
-}
-
-.login-button:hover,
-.login-button:focus {
-    background-color: rgba(81, 201, 238, 0.4);
-}
-
-a {
-    font-size: 1rem;
-    text-decoration: none;
-    color: white;
-    font-weight: lighter;
-}
-a:hover {
-    color: rgb(255, 228, 228);
+    padding: 0;
+    box-sizing: border-box;
 }
 
 input::-webkit-outer-spin-button,
@@ -101,4 +14,119 @@ input::-webkit-inner-spin-button {
 
 input[type=number] {
     -moz-appearance: textfield;
+}
+
+body {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.8;
+    color: #333333;
+    background-image: url("Pictures/library-login.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: white;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.form-wrapper {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   height: 650px;
+}
+
+
+
+.login {
+    position: relative;
+    max-width: 400px;
+    width: 100%;
+    padding: 2em;
+    text-align: center;
+    background-color: rgb(255, 255, 255 / 3%);
+    border: 1px solid rgb(255, 255, 255 / 15%);
+    box-shadow: 0 25px 23px rgb(0, 0, 0 / 15%);
+    -webkit-backdrop-filter: blur(2px);
+    backdrop-filter: blur(2px);
+    border-radius: 8px;
+}
+
+form > div {
+    position: relative;
+    margin: 2em 0;
+}
+
+form div input {
+    outline: 0;
+    width: 100%;
+    height: 50px;
+    padding: 0 1em;
+    border-radius: 8px;
+    background-color: transparent;
+    border: 1px solid rgb(255, 255, 255 / 15%);
+    color: #fff;
+    transition: border-color .3s;
+}
+
+form div :where(label, i) {
+    position: absolute;
+    top: 50%;
+    left: 1em;
+    transform: translateY(-50%);
+    transition: top .3s, font-size .3s, color .3s;
+}
+
+form div i {
+    right: 1em;
+    left: auto;
+}
+
+form div:not(.checkbox) input:focus ~ label,
+form div:not(.checkbox) input:not(:placeholder-shown):not(:focus) ~ label {
+    top: -10px;
+    font-size: 13px;
+    color: #fff;
+}
+
+form div:not(.checkbox) input:focus,
+form div:not(.checkbox) input:not(:placeholder-shown):not(:focus) {
+    border-color: rgb(255, 255, 255 / 30%);
+}
+
+form div button {
+    border: 0;
+    outline: 0;
+    width: 100%;
+    height: 40px;
+    background-color: #ed5967;
+    color: white;
+    border-radius: 8px;
+    transition: background-color .3s;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #90465f;
+}
+
+form .split {
+    display: flex;
+    justify-content: space-between;
+}
+
+form .split a:hover {
+    text-decoration: underline;
+}
+
+.error {
+    background: #F2DEDE;
+    color: #A94442;
+    padding: 10px;
+    width: 100%;
+    border-radius: 5px;
+    margin: 20px auto;
 }
