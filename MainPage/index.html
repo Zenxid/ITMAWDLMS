@@ -4,33 +4,46 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>STI Munoz Page</title>
-    <link rel="stylesheet" href="Front_Page.css">
+    <link rel="stylesheet" href="Front_Page.css?v=<?php echo time()?>">
     <script src="https://kit.fontawesome.com/5eaa044e5f.js" crossorigin="anonymous"></script>
+
+    <style>
+        .header {
+            background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(../Pictures/library.jpg);
+        }
+    </style>
 </head>
 <body>
     <div class="content">
-            <div class="header">
+        <div class="header">
             <nav>
                 <div class="logo">
-                <img src="/Pictures/STI-Small.png">
+                <img src="../Pictures/STI-Small.png">
                 <a href="#">Library Services</a>
                 </div>
-                <ul class="nav-links">
-                    <li><a href="#library-areas">Library Areas</a></li>
-                    <li><a href="#console-games">Console Games</a></li>
-                    <li><a href="#board-games">Board Games</a></li>
-                    <li><a href="#featured-books">Books</a></li>
-                </ul>
-                <a href="LoginForm.html" class="signin-btn">Sign in</a>
-            </nav>
-                <div class="container">
-                <h1>Chill, Relax, and Motivate!</h1>
+                <div class="mobile-menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
                 </div>
+            <ul class="nav-links">
+                <li><a href="#library-areas">Library Areas</a></li>
+                <li><a href="#board-games">Board Games</a></li>
+                <li><a href="#featured-books">Books</a></li>
+                <li><a href="#console-games">Console Games</a></li>
+            </ul>
+            <a href="../LoginForm.php" class="signin-btn">Sign in</a>
+            </nav>
+            <div class="container">
+                <h1>Chill, Relax, and Motivate!</h1>
             </div>
+        </div>
             <div class="container">
                 <h2 class="sub-title" id="library-areas">Library Areas</h2>
                 <div class="slide-container">
-                    <div id="slide">
+
+                    <div class="slide">
+
                         <div class="item" style="background-image: url(https://upload.wikimedia.org/wikipedia/commons/thumb/7/72/NYC_-_New_York_City_Library_-_1723.jpg/800px-NYC_-_New_York_City_Library_-_1723.jpg);">
                             <div class="slide-content">
                                 <div class="name">ENTRANCE</div>
@@ -38,6 +51,7 @@
                                 <button>Sign in</button>
                             </div>
                         </div>
+
                         <div class="item" style="background-image: url(https://tf-cmsv2-smithsonianmag-media.s3.amazonaws.com/legacy_blog/10_23_2012_library-use.jpg);">
                             <div class="slide-content">
                                 <div class="name">Main room</div>
@@ -45,6 +59,7 @@
                                 <button>Sign in</button>
                             </div>
                         </div>
+                        
                         <div class="item" style="background-image: url(https://www.pewresearch.org/internet/wp-content/uploads/sites/9/2016/09/PI_2016.09.09_Libraries-2016_featured.png?w=640);">
                             <div class="slide-content">
                                 <div class="name">Comfy room</div>
@@ -59,6 +74,7 @@
                                 <button>Sign in</button>
                             </div>
                         </div>
+
                         <div class="item" style="background-image: url(https://georgialibraries.org/wp-content/uploads/2019/04/photo-of-people-using-computers-in-the-library.jpg);">
                             <div class="slide-content">
                                 <div class="name">Study room</div>
@@ -66,10 +82,12 @@
                                 <button>Sign in</button>
                             </div>
                         </div>
-                        <div class="buttons">
-                            <button id="prev"><i class="fa-solid fa-chevron-left"></i></button>
-                            <button id="next"><i class="fa-solid fa-chevron-right"></i></button>
-                        </div>
+
+                    </div>
+
+                    <div class="buttons">
+                        <button class="prev"><i class="fa-solid fa-arrow-left"></i></button>
+                        <button class="next"><i class="fa-solid fa-arrow-right"></i></button>
                     </div>
                 </div>
                 <h2 class="sub-title" id="board-games">Board Games</h2>

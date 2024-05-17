@@ -1,9 +1,13 @@
+let next = document.querySelector('.next')
+let prev = document.querySelector('.prev')
 
-document.getElementById('next').onclick = function() {
-    let lists = document.querySelectorAll('.item');
-    document.getElementById('slide').appendChild(lists[0]);
-}
-document.getElementById('prev').onclick = function() {
-    let lists = document.querySelectorAll('.item');
-    document.getElementById('slide').prepend(lists[lists.length - 1]);
-}
+next.addEventListener('click', function(){
+    let lists = document.querySelectorAll('.item')
+    document.querySelector('.slide').appendChild(lists[0])
+})
+
+prev.addEventListener('click', function(){
+    let lists = document.querySelectorAll('.item')
+    document.querySelector('.slide').prepend(lists[lists.length - 1])
+})
+
