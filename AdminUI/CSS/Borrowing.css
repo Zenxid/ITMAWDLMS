@@ -1,0 +1,332 @@
+.table_container {
+    border-bottom: 1px solid black;
+}
+
+.table_header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px;
+}
+
+.select-container {
+    display: flex;
+    
+}
+
+.custom-select {
+    position: relative;
+    width: 150px;
+    height: 30px;
+    border: #000000 solid 1px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+    margin: 0 0 15px 15px;
+}
+
+.custom-select select {
+  width: 100%;
+  height: 100%;
+  border: none;
+  background: transparent;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  padding: 0 10px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.custom-select select:focus {
+  outline: none;
+}
+
+
+
+.custom-select select::-ms-expand {
+  display: none;
+}
+
+.board .table-wrap .table_header .title {
+    font-size: 20px;
+    color: #000000;
+}
+
+.table_header div button {
+    outline: none;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+
+.table_header div input {
+    padding: 7px 15px;
+    margin: 0 10px;
+    outline: none;
+    border: 1px solid #0298cf;
+    border-radius: 6px;
+}
+
+.table_header div input::placeholder {
+    font-size: 12px;
+}
+
+.board {
+    width: 98%;
+    margin: 5px 0 0 10px;
+    overflow: auto;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    white-space: nowrap;
+}
+
+.board .title {
+    font-size: 20px;
+    font-weight: 600;
+    margin: 15px;
+    color: rgb(94, 87, 87);
+    border-bottom: #eef0f3;
+}
+
+.board .table-wrap {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+}
+.board img {
+    width: 45px;
+    height: 45px;
+    object-fit: cover;
+    border-radius: 20%;
+    margin-right: 15px;
+}
+
+.board p {
+    font-weight: 400;
+    font-size: 13px;
+    color: #787d8d;
+}
+
+.board .profile {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+table {
+    border-collapse: collapse;
+}
+
+tr {
+    border-bottom: 1px solid #eef0f3;
+}
+
+thead td {
+    font-size: 14px;
+    text-transform: uppercase;
+    font-weight: 600;
+    background-color: #F9FAFB;
+    text-align: start;
+    padding: 15px;
+    white-space: nowrap;
+    overflow: hidden; 
+}
+
+tbody tr td {
+    padding: 10px 15px;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.active p {
+    background: #d7fada;
+    padding: 2px 10px;
+    display: inline-block;
+    border-radius: 40px;
+    color: #2b2b2b;
+}
+
+.status p {
+    background-color: #fad7d7;
+    padding: 2px 10px;
+    display: inline-block;
+    border-radius: 40px;
+    color: #2b2b2b;
+}
+
+
+.data-buttons {
+    outline: none;
+    border: none;
+    cursor: pointer;
+    border-radius: 6px;
+    padding: 5px;
+    background-color: rgb(192, 64, 0);
+    color: white;
+}
+
+.data-buttons:hover {
+    background-color: rgb(226, 78, 3);
+}
+/* ----------------------------------------- END OF TABLE ------------------------------ */
+
+#exportButton {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 2px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin-left: 570px;
+    margin-bottom: 10px;
+    cursor: pointer;
+    border-radius: 10px;
+}
+
+/* ---------------------------- END OF EXPORT BUTTON -------------------- */
+
+
+.remark-container {
+    width: 800px;
+    height: 500px;
+    overflow-y: scroll;
+    background-color: #fff;
+    border-radius: 15px;
+    border: 1px solid #2b2b2b;
+    position: fixed;
+    top: 15%;
+    right: 20%;
+    display: flex;
+    flex-direction: column;
+    opacity: 0;
+    transform: translateY(-20px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.remark-container.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.remark-container .title {
+    font-size: 16px;
+    width: 100%;
+    border-bottom: 1px solid #787d8d;
+    padding: 0 15px;
+    margin: 15px 0;
+    font-weight: 500;
+}
+
+.remark-container .success-container .title {
+    color: rgb(16, 139, 16);
+}
+
+.remark-container .failure-container .title {
+    color: rgb(139, 16, 16);
+}
+
+.remark-container .content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.remark-container .content .container-grid h4{
+    font-weight: 500;
+}
+
+.remark-container .content .container-grid .button-details {
+    position: relative;
+    display: flex;
+    gap: 15px;
+    margin-top: 25px;
+    left: 65px;
+}
+
+.remark-container .content .container-grid .button-details .check {
+    margin-left: 15px;
+    color: green;
+}
+
+.remark-container .content .container-grid .button-details .x{
+    color: red;
+}
+.remark-container .content .container-grid .button-details button{
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.remark-container .content .container-grid .button-details button i {
+    font-size: 25px;
+}
+
+
+.remark-container .content .container-grid .user-details {
+    display: flex;
+    align-items: center;
+
+}
+
+.remark-container .content .container-grid .user-details img {
+    width: 80px;
+    height: 80px;
+    margin: 0;
+}
+
+.remark-container .content .container-grid .user-details p {
+    margin-left: 5px;
+    font-size: 15px;
+}
+
+.searchInput {
+    width: 200px;
+    padding: 2px;
+    font-size: 16px;
+    border: 2px solid #282a2c;
+    border-radius: 5px;
+    box-sizing: border-box;
+    background-color: #fff;
+    margin-left: 15px;
+}
+
+.searchInput:focus {
+    outline: none;
+    border-color: #55595c;
+}
+
+.ui-autocomplete {
+    max-height: 200px;
+    overflow-y: auto;
+    z-index: 1000;
+    background: none;
+}
+
+.ui-menu-item {
+    padding: 8px 12px;
+    cursor: pointer;
+    display: block;
+}
+
+.ui-autocomplete::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+}
+
+.remark-container::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+}
+
+.remark-container .content p {
+    font-size: 18px;
+    color: black;
+    margin-left: 15px;
+}
+
+
+
+/* ---------------------------------------- END OF REMARK MODAL --------------------- */

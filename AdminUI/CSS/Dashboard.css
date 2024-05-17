@@ -1,0 +1,188 @@
+.cardBox {
+    position: relative;
+    width: 100%;
+    padding: 20px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 30px;
+}
+
+.cardBox .card {
+    position: relative;
+    background: var(#fff);
+    padding: 25px;
+    display: flex;
+    justify-content: space-between;
+    cursor: pointer;
+    box-shadow: 0 7px 25px rgba(0, 0, 0, 0.08);
+    transition: all 0.4s ease;
+    border-radius: 25px;
+}
+
+.cardBox .card .numbers {
+    position: relative;
+    font-weight: 500;
+    font-size: 2.5rem;
+    color: rgb(211, 143, 103);
+}
+
+.cardBox .card .cardName {
+    color: #222;
+    font-size: 1.1rem;
+    margin-top: 5px;
+}
+
+.cardBox .card .iconBx {
+    font-size: 3.5rem;
+    color: #222;
+}
+
+.cardBox .card:hover {
+    top: -5px;
+}
+
+/* ------------------------------------ END OF CARD UI ------------------------------ */
+
+.details {
+    position: relative;
+    width: 100%;
+    padding: 20px;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-gap: 30px;
+    margin-top: 10px;
+}
+
+.details .recentActivities {
+    position: relative;
+    height: 500px;
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 0 7px 25px rgba(0, 0, 0, 0.08);
+    border-radius: 20px;
+    overflow: auto;
+}
+
+.details .cardHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.cardHeader h2 {
+    font-weight: 600;
+    color: rgb(211, 143, 103);
+}
+
+.cardHeader .btn {
+    position: relative;
+    padding: 5px 10px;
+    background: rgb(211, 143, 103);
+    text-decoration: none;
+    color: #fff;
+    border-radius: 6px;
+}
+
+.details table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+.details table thead td {
+    font-weight: 600;
+}
+
+.details .recentActivities table tr {
+    color: #222;
+    border-bottom: 1px solid rgba(0, 0, 0, .1);
+}
+
+.details .recentActivities table tr:last-child {
+    border-bottom: none;
+}
+
+.details .recentActivities table tr td {
+    padding: 10px;
+}
+
+.details .recentActivities table tr td:last-child {
+    text-align: end;
+}
+
+.details .recentActivities table tr td:nth-child(2) {
+    text-align: end;
+}
+
+.details .recentActivities table tr td:nth-child(3) {
+    text-align: center;
+}
+
+.status.active {
+    padding: 2px 4px;
+    background: #8de02c;
+    color: #fff;
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.status.inactive {
+    padding: 2px 4px;
+    background: #f00;
+    color: #fff;
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.recentBorrower {
+    position: relative;
+    height: 500px;
+    padding: 20px;
+    box-shadow: 0 7px 25px rgba(0, 0, 0, 0.08);
+    border-radius: 20px;
+    background: #fff;
+    overflow-y: scroll;
+}
+
+.recentBorrower::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+}
+
+.recentBorrower .imgBx {
+    position: relative;
+    width: 60px;
+    height: 60px;
+}
+
+.recentBorrower .imgBx img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.recentBorrower table tr td {
+    padding: 17px 10px;
+}
+
+.recentBorrower table tr td h4 {
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1.2rem;
+}
+
+.recentBorrower table tr td h4 span{
+    font-size: 14px;
+    color: #222;
+}
+
+/* ------------------------------------ END OF DETAILS UI ------------------------------ */
+
+
+
+
+/* ------------------------------------ END OF MEDIA QUERY ---------------- */

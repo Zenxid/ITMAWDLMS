@@ -1,0 +1,181 @@
+.input-data {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+}
+
+.autocomplete {
+    width: 300px;
+    padding: 5px;
+    text-align: left;
+    font-size: 14px;   
+}
+.autocomplete.title {
+    width: 100%;
+    padding: 8px 5px;
+    margin-top: 10px;
+}
+textarea {
+    margin-top: 15px;
+    font-size: 18px;
+}
+  
+*:focus {
+    outline: none;
+}
+
+
+.autocomplete-suggestions {
+    text-align: left;
+    border: 1px solid #999;
+    border-bottom-left-radius: 3px;
+    border-bottom-right-radius: 3px;
+    background: #FFF;
+    overflow: auto;
+}
+
+.autocomplete-suggestion {
+    padding: 5px 5px;
+    white-space: nowrap;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.autocomplete-suggestions::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+}
+
+.autocomplete-selected {
+    background: #F0F0F0;
+}
+
+.autocomplete-suggestions strong {
+    font-weight: normal;
+    color: #3399FF;
+}
+
+.autocomplete-group {
+    padding: 2px 5px;
+}
+
+.autocomplete-group strong {
+    display: block;
+    border-bottom: 1px solid #000;
+}
+
+.flex {
+    display: flex;
+    justify-content: space-between;
+}
+
+.history-chat {
+    background-color: rgb(192, 64, 0);
+    border-radius: 15px;
+    margin: 10px 10px;
+    width: 500px;
+    height: 500px;
+}
+
+.history-title {
+    display: flex;
+    align-items: center;
+    font-size: 24px;
+    color: white;
+    margin-left: 5px;
+    margin-top: 5px;
+}
+
+.card-container {
+    overflow-y: scroll;
+    height: 460px;
+}
+
+.card-container::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+}
+
+.card {
+    width: 480px;
+    border-radius: 5px;
+    background-color: white;
+    margin-left: 10px;
+    margin-top: 5px;
+}
+
+.card .profile {
+    display: flex;
+    padding: 5px 4px;
+}
+
+.card .profile .number {
+    background-color: #f38c06;
+    color: white;
+    border-radius: 5px;
+    font-size: 12px;
+    padding: 2px 5px;
+    margin-right: 4px;
+}
+
+.card .message {
+    display: flex;
+    padding: 2px 5px;
+}
+
+.card .message .message-title {
+    margin-left: 2px;
+    margin-right: 5px;
+}
+
+.input-data {
+    background-color: rgb(192, 64, 0);
+    border-radius: 15px;
+    margin: 15px;
+    width: 735px;
+    height: 400px;
+}
+
+.input-data .input-title {
+    color: white;
+    text-transform: uppercase;
+    font-size: 24px;
+}
+
+.input-data .inputs {
+    margin-top: 15px;
+}
+.button-data {
+    width: 100%;
+    margin-top: 10px;
+}
+
+.button-data button {
+    float: right;
+    padding: 6px 25px;
+    margin: 5px;
+    cursor: pointer;
+    border: none;
+    text-transform: uppercase;
+}
+
+.button-data button.check {
+    background-color: rgb(22, 212, 22);
+    border: none;
+    color: white;
+    border-radius: 5px;
+}
+
+.button-data button.clear {
+    background-color: #525252;
+    color: white;
+    border-radius: 5px;
+}
+
+.button-data button.check:hover {
+    background-color: rgb(14, 177, 14);
+}
+
+.button-data button.clear:hover {
+    background-color: #363636;
+}
