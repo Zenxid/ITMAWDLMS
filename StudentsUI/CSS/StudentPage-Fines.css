@@ -1,0 +1,179 @@
+main .container {
+    display: flex;
+    flex-direction: column;
+}
+
+main .title {
+    width: 100%;
+    text-align: center;
+    margin-top: 15px;
+    border-bottom: 1px solid #eee;
+    color: white;
+    text-shadow: 1px 1px black;
+}
+main .title .text-center {
+    font-weight: 500;
+    margin-bottom: 5px;
+}
+
+.small-container {
+    width: 100%;
+    margin: auto;
+    padding-left: 25px;
+    padding-right: 25px;
+    max-height: 700px;
+    overflow-y: scroll;
+}
+
+.cart-page {
+    margin: 20px 0;
+}
+  
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.cart-info {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+th {
+    text-align: left;
+    padding: 5px;
+    color: #ffffff;
+    font-weight: normal;
+    font-weight: 600;
+}
+thead {
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    background-color: #6495ED;
+}
+
+td {
+    padding: 10px 5px;
+    background: #ffffff;
+}
+
+td input {
+    width: 40px;
+    height: 30px;
+    padding: 5px;
+}
+
+td a {
+    color: #ff523b;
+    font-size: 12px;
+}
+
+td img {
+    width: 80px;
+    height: 80px;
+    margin-right: 10px;
+}
+
+.payment {
+    width: 25px;
+    height: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: none;
+    border: 1px solid #5f6366;
+    cursor: pointer;
+}
+
+.payment:hover {
+    background-color: aliceblue;
+}
+
+.payment i {
+    font-size: 18px;
+}
+
+/* ---------------------------------- END OF TABLE ----------------------- */
+
+.custom-toast {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #5f6366;
+    color: #fff;
+    padding: 15px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    font-size: 15px;
+    z-index: 9999;
+  }
+  
+.custom-toast i {
+    margin-right: 10px;
+}
+
+.custom-toast p {
+    margin: 0;
+}
+
+.custom-toast.success {
+    background-color: #4caf50;
+}
+
+.custom-toast.failed {
+    background-color: #b83f3f;
+}
+
+/* ------------------------ END OF CUSTOM TOAST -------------- */
+@media (max-width: 767px) {
+    main .title {
+        font-size: 10px;
+        margin-top: 10px;
+    }
+
+    .small-container {
+        padding: 0 10px;
+        max-height: none;
+        overflow-y: auto;
+    }
+
+    table {
+        font-size: 14px;
+    }
+
+    th, td {
+        font-size: 8px;
+    }
+
+    .table-wrapper {
+        overflow-x: auto; /* Enable horizontal scrolling on small screens */
+    }
+
+    td input {
+        width: 30px;
+        height: 25px;
+        padding: 3px;
+    }
+
+    td img {
+        width: 60px;
+        height: 60px;
+        margin-right: 5px;
+    }
+
+    .custom-toast {
+        bottom: 10px;
+        padding: 10px;
+        font-size: 12px;
+    }
+
+    .cart-info {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+}

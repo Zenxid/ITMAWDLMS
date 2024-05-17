@@ -1,0 +1,411 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+
+a {
+    text-decoration: none;
+    color: inherit;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.column {
+    margin-left: -0.938em;
+    margin-right: -0.938em;
+}
+
+.colum .row {
+    padding: 0 0.938em;
+}
+
+.flexitem {
+    display: flex;
+    align-items: center;
+}
+
+.flexcol {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+}
+li {
+    list-style: none;
+}
+
+.object-cover {
+    display: block; 
+    object-fit: cover;
+}
+
+.thumbnail {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.single-cart {
+    overflow-x: hidden;
+}
+.single-cart .container .wrapper{
+    width: 100%;
+    margin: 15px;
+}
+
+.single-cart .container .wrapper .page-title {
+    width: 100%;
+    text-align: center;
+    border-bottom: 1px solid #eee;
+}
+
+.single-cart .container .wrapper .page-title h1 {
+    font-weight: 500;
+    margin-bottom: 5px;
+    color: white;
+    text-shadow: 1px 1px black;
+}
+
+#cart-table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    width: 100%;
+}
+
+input::placeholder {
+    font: inherit;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type=number] {
+    -moz-appearance: textfield;
+}
+
+.products .collapse .has-child > a::before {
+    content: '+';
+    position: absolute;
+    left: 0;
+}
+
+.products .collapse .expand > a::before {
+    content: '-';
+}
+
+
+.icon-small {
+    font-size: 1.25em;
+    margin: auto;
+}
+
+.icon-large {
+    font-size: 1.75em;
+    padding: 0 0.75em 0 0 ;
+}
+
+.secondary-button {
+    left: 92%;
+    position: relative;
+    background-color: #6495ED;
+    color: white;
+    padding: 10px 15px 10px 15px;
+    border-radius: 5px;
+    transition: .2s ease-in-out;
+    border: none;
+    cursor: pointer;
+}
+
+.secondary-button:hover {
+    background-color: #64afed;
+}
+
+main {
+    width: 80%;
+}
+
+/* ------------------------------------ END OF SET-UP ----------------------------------- */
+
+.thumbnail a img {
+    width: 80px;
+    height: 80px;
+}
+
+.products.cart .flexitem .content {
+    gap: 1em;
+}
+
+.products.cart .flexitem .content p {
+    margin-top: 5px;
+    font-size: 12px;
+}
+
+.products.cart .flexitem .content strong {
+    font-weight: 400;
+    font-style: italic;
+    font-size: 20px;
+}
+
+.products.cart form {
+    width: 100%;
+}
+
+.products.cart table thead th {
+    vertical-align: middle;
+    background: #6495ED;
+    color: white;
+}
+
+.products.cart table tbody tr {
+    background-color: white;
+}
+
+.products.cart table :where(th, td) {
+    padding: 0.5em 1em;
+    text-align: left;
+}
+
+.products.cart table tbody td:first-child {
+    padding-left: 0;
+}
+
+.products.cart table td :where(.content, .qty-control, p) {
+    margin: 0;
+    padding: 0;
+}
+
+.products.cart .qty-control :where(button, input) {
+    width: 36px;
+    height: 36px;
+    padding: 0.25em;
+    text-align: center;
+    outline: 0;
+    border: 0;
+    background-color: transparent;
+}
+
+.products.cart .qty-control {
+    width: fit-content;
+    padding: 0.2em;
+    border: 1px solid #e5e8ec;
+}
+
+.products.cart .qty-control button {
+    cursor: pointer;
+}
+
+.products.cart table tbody tr {
+    border-bottom: 1px solid #e5e8ec;
+}
+
+.products.cart .item {
+    gap: 1em;
+    padding-bottom: 2.5em;
+    margin-top: 3.5em;
+}
+
+/* ------------------------------------------- END OF PRODUCTS CARTS ---------------------------- */
+
+.validation-wrapper {
+    position: fixed;
+    top: 50px; 
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-color: transparent;
+    overflow: hidden; 
+    transition: all .3s;
+    z-index: 999; 
+    visibility: hidden;
+    opacity: 0;
+    height: 500px;
+}
+.validation-content {
+    position: relative;
+    background-color: #FFF;
+    text-align: center;
+    padding: 3rem 2rem 2rem;
+    border-radius: 1.25rem;
+    transition: all .3s;
+    margin: auto; width: 380px;
+    transform: translateY(10%);
+}
+
+.validation-button {
+    display: inline-block;
+    background-color: #ED6755;
+    color: #FFF;
+    padding: .75rem 1.25rem;
+    border-radius: .5rem;
+    transition: .3s;
+    cursor: pointer;
+    width: 95%;
+}
+.validation-button:hover {
+    opacity: .8;
+}
+.validation-img {
+    width: 200px;
+    margin-bottom: .75rem;
+}
+.validation-title {
+    font-size: 28px;
+    color: #1F2937;
+    font-weight: 700;
+}
+.validation-description {
+    margin-bottom: 1.5rem;
+    font-size: 14px;
+    color: #6b7280;
+    font-weight: 500;
+}
+
+.show {
+    visibility: visible;
+    opacity: 1;
+}
+.show .validation-content {
+    transform: translateY(0);
+}
+
+@media only screen and (max-width: 768px) {
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: sans-serif;
+    }
+
+    .column {
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    .colum .row {
+        padding: 0;
+    }
+
+    .flexitem {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    li {
+        list-style: none;
+    }
+
+    .thumbnail a img {
+        width: 60px;
+        height: 60px;
+    }
+
+    .qty-control {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .products.cart .flexitem .content {
+        text-align: center;
+    }
+
+    .products.cart .flexitem .content p {
+        font-size: 7px;
+        margin-top: 0;
+    }
+
+    .products.cart .flexitem .content strong {
+        font-size: 12px;
+    }
+
+    .products.cart table :where(th, td) {
+        padding: 0.3em 0.5em;
+    }
+
+    .products.cart table tbody td:first-child {
+        padding-left: 0;
+    }
+
+    .products.cart .qty-control :where(button, input) {
+        width: 25px;
+        height: 20px;
+        padding: 0.2em;
+    }
+
+    .validation-wrapper {
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 100vh;
+    }
+
+    .validation-content {
+        width: 90%;
+    }
+
+    .validation-img {
+        width: 150px;
+    }
+
+    .validation-title {
+        font-size: 20px;
+    }
+
+    .validation-description {
+        font-size: 12px;
+    }
+
+    .secondary-button {
+        left: 50%;
+        transform: translateX(-50%);
+        font-size: 12px;
+    }
+
+    main .container {
+        padding: 0 10px;
+    }
+
+    .table {
+        overflow-y: scroll;
+    }
+
+    table {
+        width: 100%;
+    }
+
+    .delete-btn {
+        width: 24px;
+        padding: 3px;
+        height: 24px;
+    }
+
+    .delete-btn i {
+        font-size: 14px;
+    }
+
+    .page-item {
+        padding: 5px;
+        font-size: 10px;
+    }
+    thead {
+        font-size: 10px;
+    }
+
+    .table-responsive {
+        overflow-x: scroll;
+        width: 100%; /* Ensure the table fills the screen width */
+    }
+    
+    td:nth-child(3) {
+        font-size: 8px;
+    }
+
+    td:nth-child(4) {
+        font-size: 10px;
+    }
+}
+

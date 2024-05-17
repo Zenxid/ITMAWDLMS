@@ -1,0 +1,97 @@
+.notification-container {
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    z-index: 999;
+    width: 300px;
+}
+
+.add-to-notification {
+    width: 100%;
+    height: auto;
+    border: 1px solid #e5e8ec;
+    background-color: #fff;
+    border-radius: 15px;
+    box-shadow: 0 0.5rem 1rem rgba(0,0,0,0.1);
+    margin-bottom: 10px;
+    display: none;
+}
+
+.add-to-notification.active {
+    display: block;
+}
+
+.add-to-notification .notification-img {
+    float: left;
+    margin-right: 10px;
+}
+
+.add-to-notification .notification-img img {
+    width: 100px;
+    height: 110px;
+}
+
+.add-to-notification .notification-description {
+    overflow: hidden;
+}
+
+.notification-description h4 {
+    margin-top: 0px;
+    font-size: 16px;
+}
+
+.notification-description p {
+    margin-bottom: 0px;
+    font-size: 12px;
+}
+
+.progress-bar {
+    width: 100%;
+    height: 5px;
+    background-color: #3b80f9;
+    border-radius: 15px;
+    overflow: hidden;
+    margin-top: 5px;
+}
+
+.progress {
+    width: 0;
+    height: 100%;
+    background-color: #4CAF50;
+    animation: progressAnimation 5s linear forwards;
+}
+
+@keyframes progressAnimation {
+    0% {
+        width: 0;
+    }
+    100% {
+        width: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    .notification-container {
+        width: 70%;
+        right: 5%;
+        bottom: 20px;
+    }
+
+    .add-to-notification .notification-img {
+        margin-right: 0;
+        text-align: center;
+    }
+
+    .add-to-notification .notification-img img {
+        width: 80px;
+        height: 80px;
+    }
+
+    .notification-description h4 {
+        font-size: 12px;
+    }
+
+    .notification-description p {
+        font-size: 8px;
+    }
+}

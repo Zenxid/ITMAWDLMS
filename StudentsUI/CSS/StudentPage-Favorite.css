@@ -1,0 +1,145 @@
+main .container {
+    display: flex;
+    flex-direction: column;
+}
+
+main .title {
+    display: flex;
+    width: 100%;
+    text-align: center;
+    margin-top: 15px;
+    border-bottom: 1px solid #eee;
+    color: white;
+    text-shadow: 1px 1px black;
+    font-size: 10px;
+    justify-content: space-between;
+}
+main .title .text-center {
+    font-weight: 500;
+    margin-bottom: 5px;
+    margin-left: 20px;
+}
+
+main .title .search {
+    border: none;
+    border-bottom: 1px solid #ffffff;
+    background: none;
+    margin-bottom: 4px;
+    margin-right: 8px;
+    width: 300px;
+    outline: none;
+    color: white;
+    text-shadow: 1px 1px black;
+}
+
+main .title .search::placeholder {
+    color: white;
+    text-shadow: 1px 1px black;
+
+}
+
+main .table-container {
+    padding: 15px;
+    max-height: 780px;
+    overflow-y: auto;
+}
+
+main .table-container::-webkit-scrollbar {
+    height: 0;
+    width: 0;
+}
+
+table {
+    background-color: #ffffff;
+    border-radius: 5px;
+}
+
+.item-container {
+    display: flex;
+    padding: 15px;
+}
+
+.item-container .item-details {
+    margin-left: 10px;
+}
+
+.item-container .item-details .item-title {
+    font-weight: 500;
+    font-size: 13px;
+}
+
+.item-container .item-details .item-description {
+    font-size: 11px;
+    max-height: 58px;
+    overflow-y: auto;
+}
+
+.item-container .item-details .item-description::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+}
+
+.item-container img {
+    width: 80px;
+    height: 80px;
+}
+
+thead tr td:first-child {
+    text-align: center;
+}
+
+tbody tr td:last-child {
+    text-align: center;
+}
+
+.remove {
+    background: none;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+/* Responsive styles */
+
+/* Adjustments for smaller screens */
+@media (max-width: 767px) {
+    main .title {
+        flex-direction: column; /* Change flex direction to column for smaller screens */
+        align-items: center; /* Center align items vertically for smaller screens */
+    }
+
+    main .title .text-center {
+        margin-left: 0; /* Remove left margin for text-center on smaller screens */
+        margin-bottom: 10px; /* Increase bottom margin for text-center on smaller screens */
+    }
+
+    main .title .search {
+        width: 100%; /* Make search input full width on smaller screens */
+        margin-right: 0; /* Remove right margin on smaller screens */
+    }
+
+    main .table-container {
+        padding: 10px; /* Decrease padding for smaller screens */
+        max-height: none; /* Remove max height for smaller screens */
+    }
+
+    .item-container {
+        align-items: center;
+        flex-direction: column; /* Change flex direction to column for smaller screens */
+        
+    }
+
+    .item-container img {
+        width: 120px;
+        height: 120px;
+        margin-bottom: 10px; /* Add margin bottom for images on smaller screens */
+    }
+
+    td:nth-child(2) {
+        display: none;
+    }
+
+    td:nth-child(3) {
+        display: none;
+    }
+}
